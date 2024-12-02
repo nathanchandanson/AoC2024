@@ -25,17 +25,15 @@ int main()
     }
 
     /* Début du calcul */
-    // Tri des données
-    std::sort(column1.begin(), column1.end());
-    std::sort(column2.begin(), column2.end());
-
-    // Calcul des distances
-    int dist_tot = 0;
-    for(int i = 0; i < column1.size(); i++)
+    int similarity_score = 0;
+    int current_value;
+    for(int i = 0; i<column1.size(); i++)
     {
-        dist_tot += abs(column1[i]-column2[i]);
+        current_value = column1[i];
+        similarity_score += current_value * std::count(column2.begin(), column2.end(), current_value);
     }
 
-    // Affichage
-    std::cout << "Distance totale : " << dist_tot << std::endl;
+    // Affichage 
+    std::cout << "Similarity score : " << similarity_score << std::endl;
+    return 0;
 }
