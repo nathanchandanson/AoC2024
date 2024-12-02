@@ -19,6 +19,8 @@ int main()
         column2.push_back(value2);
     }
 
+    file.close();
+
     if(column1.size() != column2.size()){
         std::cerr << "Error reading the file";
         return -1;
