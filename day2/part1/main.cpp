@@ -51,12 +51,9 @@ int main()
     std::vector<int> values_int;
 
     int nbr_safe_reports = 0;
-    while(! file.eof())
+    std::string line;
+    while(std::getline(file, line))
     {
-        std::string line;
-        std::getline(file, line);
-        if(line.empty()){goto finish;}
-
         values_string = split_string(line);
         values_int.resize(values_string.size());
 
