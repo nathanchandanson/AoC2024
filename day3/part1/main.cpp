@@ -27,5 +27,6 @@ int main()
     }
     std::cout << "Le résultat des multiplications est : " << result << std::endl;
 
+    file.close();
     return 0;
 }
